@@ -1,0 +1,98 @@
+WarTimes
+
+A multiply game
+
+Janela Principal:
+
+ * Perguntará o nome do jogador
+ 
+ LOGO DO GAME CENTRALIZADO SUPERIOR
+ BOTÕES NO MEIO DA TELA
+
+ - Single Player
+ - Multiplayer
+ - Exit Game
+
+ NOME DO JOGADOR NA PARTE INFERIOR DIREITA
+
+Single Player
+
+ - Rank: Amateur / Profissional
+ - Dificulty: Easy / Medium / Hard / Impossible
+ - Botão COMEÇAR
+
+Como funciona o game no modo SINGLE PLAYER AMADOR:
+
+- Será gerado um número chamado de original, de acordo com dificuldade (exemplo 999).
+- Aparecerá na tela os elementos:
+    PARTE SUPERIOR:
+    1: Nome do jogador e número de vidas (3 corações por exemplo).
+    2: Timer de respostas (30 segundos por exemplo).
+    3: Quantidade de pontos.
+    CENTRO:
+    4: Operação no centro da tela (de acordo com número original ou os números derivados das operações dele).
+    INFERIOR:
+    5: Botões de possíveis respostas.
+
+    Sobre a operação (4): Será criada a partir do número gerado porém com sinal de multiplicação entre eles (9 * 9 * 9 ou 9 x 9 x 9) e o jogador terá que escolher entre 3 opções mostradas em ordem aleatória na tela:
+
+        Opção 1: A resposta correta 729.
+        Opções 2 e 3: respostas incorretas onde algum dos numeros será incrementado ou decrementado, por exemplo:
+            EX 2: 9 * 8 * 9 = 648
+            EX 3: 7 * 9 * 9 = 567
+
+- Quando uma resposta incorreta foi clicada, o jogador perderá uma vida e não ganhará pontos e o jogo seguirá usando os números como se houvesse acertado.
+- Quando uma resposta correta for clicada, o jogador ganhará pontos com bonus de rapidez em responder e acertos sucessivos, o número da resposta correta se tornará o próximo número a ser operado, passando para o próximo passo de profundidade.
+- Será gerado um novo número e um acrescimo no tempo.
+- Se o tempo acabar, dá game over e mostra o nome do player e os pontos.
+
+Como funciona o game no modo SINGLE PLAYER PROFISSIONAL:
+
+- Praticamente igual o amador porém a resposta à ser clicada não será de cada operação e sim do resultado da persistencia multiplicativa do número, como exemplos abaixo:
+
+    Número Original: 39
+    Resposta: 4 (porque 3*9 = 27, 2*7 = 14, 1*4=4 e 4 é digito único)
+
+    Número Original: 999
+    Resposta: 2 (porque 9*9*9 = 729, 7*2*9 = 126, 1*2*6=12, 1*2=2 e 2 é digito único)
+
+    Número Original: 11
+    Resposta: 1 (porque 1*1 = 1 e 1 é digito único)
+
+- Poderá incluir abaixo do operador a profundidade das operações, como os exemplos:
+
+
+    Número Original: 39
+    Profundidade: 1/3 (pois iniciará na 1 e a resposta final passa por 3 multiplicações)
+
+    Número Original: 999
+    Resposta: 4 (pois iniciará na 1 e a resposta final passa por 4 multiplicações)
+
+    Número Original: 11
+    Resposta: 1/1 (pois iniciará na 1 e há apenas uma multiplicação)
+
+Sobre as dificuldades, podem definir o tempo, profundidade das operações, quantidade de dígitos à serem multiplicados etc. No profissional no fácil pode até mesmo ir dando dicas abaixo da profundidade dando um "fade in" de todas as operações resolvidas da esquerda pra direita.
+
+Multiplayer
+
+ - Rank: Amateur / Profissional
+ - Dificulty: Easy / Medium / Hard / Impossible
+ - Botão BUSCAR OPONENTE
+
+Assim como single player, porém irá aguardar outro jogador com os mesmos parâmetros também buscar um jogo.
+
+Diferenças na tela entre single player e multiplayer:
+
+- Vida e nome do jogador oponente lugar de pontos.
+- Timer compartilhado
+- Quando um jogador acerta uma resposta, piscará abaixo do nome dele em verde RESPOSTA CORRETA e ele aguardará o oponente responder a questão.
+- Quando um jogador erra uma resposta, piscará abaixo do nome dele em vermelho RESPOSTA INCORRETA, ele perderá uma vida e aguardará o oponente responder a questão.
+- Quando ambos responderem a questão, passará para a próxima também com acrescimo de tempo (que vai caindo a cada resposta dada).
+- Quando o tempo acabar, os jogadores que não responderam a questão ainda irão perder uma vida e será calculado o número de vidas de ambos onde será mostrado no centro da tela bem grande, quem tiver mais será VOCÊ VENCEU, o oposto será VOCÊ PERDEU e caso ambos estiverem com a mesma quantidade de vida dará EMPATE.
+
+- Após acabar o jogo ficará um timer de 30 segundos com dois botões perguntando:
+    REVANCHE?
+    VOLTAR AO MENU PRINCIPAL
+
+Caso ambos apertarem REVANCHE até o timer acabar, uma nova partida entre os jogadores irá iniciar.
+Se um dos jogadores apertar VOLTAR AO MENU PRINCIPAL, ambos serão levados ao menu principal.

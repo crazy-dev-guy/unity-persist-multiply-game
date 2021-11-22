@@ -4,13 +4,18 @@ using UnityEngine;
 public class Tests : MonoBehaviour {
     
     void Start() {
-        print(Persistence(39));
-        print(Persistence(999));
-        print(Persistence(11));
-        print(Persistence(4));
+        print(createRandomNumber(1, 1, 10, 999));
+        print(createRandomNumber(1, 1, 10, 999));
+        print(createRandomNumber(1, 1, 10, 999));
+        print(createRandomNumber(2, 2, 10, 999));
+        print(createRandomNumber(2, 2, 10, 999));
+        print(createRandomNumber(2, 2, 10, 999));
+        print(createRandomNumber(3, 3, 10, 999));
+        print(createRandomNumber(3, 3, 10, 999));
+        print(createRandomNumber(3, 3, 10, 999));
     }
 
-    public static int Persistence(long n) {
+    public static int persistence(long n) {
         string numberToString = n.ToString();
 
         if (numberToString.Length == 1) {
@@ -33,5 +38,35 @@ public class Tests : MonoBehaviour {
 
             return quantityOfMultiplications;
         }
+    }
+
+    public static int createRandomNumber(int minDepth, int maxDepth, int minRange, int maxRange) {
+        int number = 0;
+
+        while (number == 0){
+            UnityEngine.Random.InitState(System.DateTime.Now.Millisecond);
+            int numberToCheck = UnityEngine.Random.Range(minRange, maxRange);
+            print("Trying : " + numberToCheck);
+            int depthToCheck = persistence(numberToCheck);
+            print("Found : " + depthToCheck);
+            if (minDepth <= depthToCheck && maxDepth >= depthToCheck) {
+                number = numberToCheck;
+            }
+        }
+        
+        print("CORRECT : " + number);
+
+        return number;
+    }
+
+    public static int multiplyAllDigits(int n) {
+        string numberToString = n.ToString();
+        int numberToMultiply = 1;
+
+        for (int i = 0; i < numberToString.Length; i++) {
+            numberToMultiply *= (int)(numberToString[i] - '0');
+        }
+
+    return numberToMultiply;
     }
 }

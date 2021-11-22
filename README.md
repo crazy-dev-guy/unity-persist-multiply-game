@@ -21,12 +21,14 @@ A Multiply Educational and Competitive Game
 - Rank [Rookie, Professional]
 - Difficulty: [Easy, Medium, Hard, Impossible]
 - Start Game
+- Back to Menu
 
 ### Multiplayer Buttons:
 
  - Rank: [Rookie, Professional]
  - Difficulty: [Easy, Medium, Hard, Impossible]
  - Find Opponent
+ - Back to Menu
 
 ## In Game:
 
